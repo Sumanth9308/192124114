@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Column1': ['apple', 'banana', 'cherry', 'date', 'elderberry']}
+df = pd.DataFrame(data)
+
+# Specify the substring you want to find
+substring = 'erry'
+
+# Find the index of the substring in 'Column1'
+index_of_substring = df['Column1'].str.find(substring)
+
+# Display the DataFrame with the index of the substring
+df['Index_of_Substring'] = index_of_substring
+print(df)
