@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with random values
+data = {
+    'Column1': np.random.uniform(-1, 1, 10),
+    'Column2': np.random.uniform(-1, 1, 10),
+    'Column3': np.random.uniform(-1, 1, 10),
+    'Column4': np.random.uniform(-1, 1, 10)
+}
+
+df = pd.DataFrame(data)
+
+# Define a function to set text color based on the sign of the number
+def color_negative_red(val):
+    color = 'red' if val < 0 else 'black'
+    return f'color: {color}'
+
+# Apply the function to the DataFrame
+styled_df = df.style.applymap(color_negative_red)
+
+# Display the styled DataFrame
+styled_df
