@@ -1,0 +1,23 @@
+import matplotlib.pyplot as plt
+
+# Read data from the text file
+with open('test.txt', 'r') as file:
+    lines = file.readlines()
+    data = [line.strip().split() for line in lines]
+
+# Extract x and y values from the data
+x = [float(row[0]) for row in data]
+y = [float(row[1]) for row in data]
+
+# Create the line plot
+plt.plot(x, y)
+
+# Add labels to the x-axis and y-axis
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+
+# Add a title to the plot
+plt.title('Line Plot from test.txt')
+
+# Display the plot
+plt.show()
